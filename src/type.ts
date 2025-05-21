@@ -12,7 +12,7 @@ type MetaType = {
 };
 
 type ReviewsType = {
-  rating: string;
+  rating: number;
   comment: string;
   date: Date;
   reviewerName: string;
@@ -25,12 +25,12 @@ type ProductType = {
   category: string;
   description: string;
   dimensions: DimensionsType;
-  discountPercentage: string;
+  discountPercentage: number;
   id: number;
   images: string[];
   meta: MetaType;
   minimumOrderQuantity: number;
-  price: string;
+  price: number;
   rating: number;
   returnPolicy: string;
   reviews: ReviewsType[];
@@ -51,4 +51,4 @@ type GetAllProduct = {
   total: number;
 };
 
-export type { GetAllProduct, DimensionsType, MetaType, ReviewsType };
+export type { GetAllProduct, ProductType, DimensionsType, MetaType, ReviewsType };

@@ -1,6 +1,8 @@
 import axios from "axios";
-const fetchBackUp = async () => {  
-  const { data } = await axios.get("backup");
+
+const getProduct = async (id = 1) => {
+  const { data } = await axios.get(`/products/${id}`);
   return data;
 };
-export { fetchBackUp };
+
+export { getProduct };

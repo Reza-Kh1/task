@@ -7,7 +7,8 @@ import 'swiper/css/pagination';
 
 import ImgTag from '../ImageTag/ImageTag';
 
-export default function SliderImage({ images }: { images: string[] }) {
+export default function SliderImage({ images }: { images?: string[] }) {
+    if (!images || !images?.length) return
     return (
         <div className="w-full max-w-lg mx-auto">
             <Swiper
@@ -19,7 +20,7 @@ export default function SliderImage({ images }: { images: string[] }) {
                 slidesPerView={1}
             >
                 {images.map((item, index) => (
-                    <SwiperSlide key={index}><ImgTag alt={"test"}  classPlus='h-64 w-full object-contain' src={item} /> </SwiperSlide>
+                    <SwiperSlide key={index}><ImgTag alt={"test"} classPlus='h-64 w-full object-contain' src={item} /> </SwiperSlide>
                 ))}
             </Swiper>
         </div>
