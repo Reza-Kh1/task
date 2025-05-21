@@ -36,25 +36,6 @@ export default function Home() {
   }
   return (
     <div className='my-6 w-11/12 mx-auto'>
-      <Box sx={{ width: 120 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">نمایش محصولات</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            label="نمایش محصولات"
-            value={Number(limit)}
-            onChange={(e) =>
-              navigate(`?limit=${e.target.value}&skip=${skip}`)
-            }
-          >
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={20}>20</MenuItem>
-            <MenuItem value={50}>50</MenuItem>
-            <MenuItem value={100}>100</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-5 my-12'>
         {data?.pages[0]?.products.length ? data?.pages[0]?.products.map((item, index) => (
           <div key={index} className='p-3 relative shadow rounded-xl bg-white flex flex-col gap-5'>
@@ -80,6 +61,27 @@ export default function Home() {
         )) : null}
       </div>
       <div >
+        <div>
+          <Box sx={{ width: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Show products</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Show products"
+                value={Number(limit)}
+                onChange={(e) =>
+                  navigate(`?limit=${e.target.value}&skip=${skip}`)
+                }
+              >
+                <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={20}>20</MenuItem>
+                <MenuItem value={50}>50</MenuItem>
+                <MenuItem value={100}>100</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+        </div>
         {data?.pages[0].total ?
           <Pagination
             className='w-full flex justify-center'

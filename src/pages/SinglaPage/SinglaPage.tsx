@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import type { ProductType } from '../../type';
 import { getProduct } from '../../services/singlePage';
 import SliderImage from '../../components/SliderImage/SliderImage';
-import { FaCartPlus, FaPlus, FaStar, FaTag } from 'react-icons/fa6';
+import { FaCartPlus, FaStar, FaTag } from 'react-icons/fa6';
 import { MdCategory } from "react-icons/md";
 import { FaRegCheckCircle } from 'react-icons/fa';
 import Discount from '../../components/Discount/Discount';
